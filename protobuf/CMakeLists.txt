@@ -103,17 +103,6 @@ if(${TRITON_COMMON_ENABLE_GRPC})
     DEPENDS "grpc_service.proto" proto-library
   )
 
-  find_package(Python REQUIRED COMPONENTS Interpreter)
-  add_custom_command(
-    OUTPUT "${GRPC_PY}"
-    COMMAND ${Python_EXECUTABLE}
-    ARGS
-      -m grpc_tools.protoc
-      -I "${grpc_service_proto_dir}"
-      --grpc_python_out "${CMAKE_CURRENT_BINARY_DIR}"
-      "grpc_service.proto"
-    DEPENDS "grpc_service.proto" proto-library
-  )
 
   add_library(
     grpc-service-library EXCLUDE_FROM_ALL OBJECT
