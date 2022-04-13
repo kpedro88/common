@@ -222,7 +222,6 @@ install(
     triton-common-async-work-queue
     triton-common-error
     triton-common-sync-queue
-    triton-common-json
     triton-common-table-printer
     common-compile-settings
   EXPORT
